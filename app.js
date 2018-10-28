@@ -1,3 +1,6 @@
+console.log(
+  '------------------file app.js--------------------'
+);
 var objects = [
   {
     id: 11,
@@ -25,9 +28,9 @@ const obj1 = {
 //   return obj[prop];
 // });
 
-const get = curry((prop, obj) => obj[prop]);
-console.log('get-name', get('name', obj1));
-console.log('get-id', get('id', obj1));
+// const get = curry((prop, obj) => obj[prop]);
+// console.log('get-name', get('name', obj1));
+// console.log('get-id', get('id', obj1));
 
 /**
  * เพราะ get รับ argument 2 ตัวคือ prop, obj
@@ -36,13 +39,27 @@ console.log('get-id', get('id', obj1));
  * ซึ่งจะได้ค่าทุกรอบที่ทำการ map
  */
 //when use map funtion now invoded like this get('id', obj)
-const getIds = objects.map(get('id'));
+// const getIds = objects.map(get('id'));
 //when use map funtion now invoded like this get('name', obj)
-const getNames = objects.map(get('name'));
-console.log('getIds', getIds);
-console.log('getNames', getNames);
+// const getNames = objects.map(get('name'));
+// console.log('getIds', getIds);
+// console.log('getNames', getNames);
 
 // var map = curry(function(fn, values) {
 //   return values.map(fn);
 // });
-const map = curry((fn, values) => values.map(fn));
+// const map = curry((fn, values) => values.map(fn));
+
+/**
+ * getIds(), getNames จะยังไม่ถูก Invoked
+ * เพราะ arguments ยังไม่ครบสองตัว(map ต้องการ 2 arguments)
+ *  */
+
+// const getIds = map(get('id'));
+// const getNames = map(get('name'));
+/**
+ * invoking getIds, getName โดยการ
+ * ส่งค่า objects เข้าไป
+ */
+// console.log('ids', getIds(objects));
+// console.log('names', getNames(objects));
