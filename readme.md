@@ -5,6 +5,7 @@
 - compose
 - nested-field
 - converge
+- filter
 
 ## log out put
 
@@ -34,3 +35,11 @@
 - R.head()
 - R.converge()
 - R.compose()
+
+## filter
+
+- R.compose()
+- R.pluck()
+- R.filter()
+- R.lt()
+- R.equals()

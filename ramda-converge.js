@@ -10,12 +10,12 @@ const isInvalidArr = [2, 5, 4, 5, 7, 1];
 // const isFirstEleBiggest = ele =>
 //   ele[0] === ele.sort((a, b) => b - a)[0];
 
-const sortByBiggestFirst = R.sort(R.descend(R.identity));
-// const sortByBiggestFirst = R.compose(
-//   R.sort,
-//   R.descend,
-//   R.identity
-// );
+// const sortByBiggestFirst = R.sort(R.descend(R.identity));
+const sortByBiggestFirst = R.compose(
+  R.sort,
+  R.descend,
+  R.identity
+)();
 const isFirstEleBiggest = R.converge(R.equals, [
   R.head, //ele => ele[0],
   R.compose(
@@ -34,4 +34,13 @@ console.log(
 console.log(
   'first element is Biggest :',
   isFirstEleBiggest(isInvalidArr)
+);
+
+console.log(R.sort(R.descend(R.identity))(isInvalidArr));
+console.log(
+  R.compose(
+    R.sort,
+    R.descend,
+    R.identity
+  )()(isInvalidArr)
 );
