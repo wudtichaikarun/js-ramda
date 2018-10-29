@@ -6,6 +6,7 @@
 - nested-field
 - converge
 - filter
+- lens
 
 ## log out put
 
@@ -43,3 +44,9 @@
 - R.filter()
 - R.lt()
 - R.equals()
+
+## lens change object field
+
+- R.lens
+- R.lensProp
+- R.over
